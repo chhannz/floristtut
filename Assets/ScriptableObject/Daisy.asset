@@ -15,3 +15,4 @@ MonoBehaviour:
   flowerID: daisy01
   flowerName: daisy
   flowerSprite: {fileID: 21300000, guid: 43ad0e5d530c5e14d9e0e5c8f861cb45, type: 3}
+  singleFlowerSprite: {fileID: 21300000, guid: 2c49d901330f5ed4b981738ce673afcc, type: 3}

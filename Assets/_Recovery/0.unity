@@ -203,13 +203,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57133872}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.0917096, y: -0.13206983, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 7.47, y: -2.31, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1347046541}
-  m_Father: {fileID: 1796309020}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &135974905
 GameObject:
@@ -336,9 +336,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47cbd542ed59445926b91560f904eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
-  targetSize: 4
   flowerData: {fileID: 11400000, guid: b41823aa0fd828648bc68efa106cc292, type: 2}
-  stock: 5
+  targetSize: 4
 --- !u!61 &322323424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -490,9 +489,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47cbd542ed59445926b91560f904eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
-  targetSize: 4
   flowerData: {fileID: 11400000, guid: 0973094b4c3100043a520cfb6a6da1e4, type: 2}
-  stock: 5
+  targetSize: 4
 --- !u!61 &388305849
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -764,9 +762,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47cbd542ed59445926b91560f904eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
-  targetSize: 4
   flowerData: {fileID: 11400000, guid: b4b7931e950687a4aad7e2c2a5dab594, type: 2}
-  stock: 5
+  targetSize: 4
 --- !u!1 &454771490
 GameObject:
   m_ObjectHideFlags: 0
@@ -851,13 +848,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 454771490}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.6282902, y: -0.17206979, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.75, y: -2.35, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 388305851}
-  m_Father: {fileID: 1796309020}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &504815268
 GameObject:
@@ -1201,13 +1198,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 531876070}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.16170979, y: -0.122069836, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.54, y: -2.3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 957866482}
-  m_Father: {fileID: 1796309020}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
@@ -1337,11 +1334,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f72fd94b98c7fe1439ca0e96ef436e08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BouquetManager
-  flowerSnapPoints:
+  points:
   - {fileID: 916783986}
   - {fileID: 1155075274}
   - {fileID: 1233555400}
-  snapFlowerPrefab: {fileID: 3999351864625719629, guid: a8cc615dcda84ad45aa9d418c997e01b, type: 3}
 --- !u!1 &916783985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1367,7 +1363,7 @@ Transform:
   m_GameObject: {fileID: 916783985}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.142, y: -0.418, z: 0}
+  m_LocalPosition: {x: -0.302, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1404,9 +1400,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47cbd542ed59445926b91560f904eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
-  targetSize: 4
   flowerData: {fileID: 11400000, guid: 11ea417aeb1d29c4a9dfc0e7e37cd577, type: 2}
-  stock: 5
+  targetSize: 4
 --- !u!61 &957866480
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1678,9 +1673,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47cbd542ed59445926b91560f904eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
-  targetSize: 4
   flowerData: {fileID: 11400000, guid: ff624d9ae86a0b74ea3a44aa5b9944d2, type: 2}
-  stock: 5
+  targetSize: 4
 --- !u!1 &1000668230
 GameObject:
   m_ObjectHideFlags: 0
@@ -1785,7 +1779,7 @@ Transform:
   m_GameObject: {fileID: 1155075273}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.239, y: -0.244, z: 0}
+  m_LocalPosition: {x: 0.017, y: 0.015, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1848,7 +1842,7 @@ Transform:
   m_GameObject: {fileID: 1233555399}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.285, y: -0.521, z: 0}
+  m_LocalPosition: {x: 0.342, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1885,9 +1879,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e47cbd542ed59445926b91560f904eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FlowerItem
-  targetSize: 4
   flowerData: {fileID: 11400000, guid: 274bbc5ddcdcbe743a468cfb2679f8d2, type: 2}
-  stock: 5
+  targetSize: 4
 --- !u!61 &1347046539
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2183,13 +2176,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1555802739}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.5317097, y: 1.4079301, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 6.91, y: -0.77, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 322323426}
-  m_Father: {fileID: 1796309020}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1624102070
 GameObject:
@@ -2275,13 +2268,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1624102070}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.18829, y: 1.4379301, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 3.19, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 436425226}
-  m_Father: {fileID: 1796309020}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1639498911
 GameObject:
@@ -2367,49 +2360,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1639498911}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.32829, y: 1.4379301, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 5.05, y: -0.74, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 976987533}
-  m_Father: {fileID: 1796309020}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1796309019
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1796309020}
-  m_Layer: 0
-  m_Name: Flowers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1796309020
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1796309019}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.37829, y: -2.17793, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1624102072}
-  - {fileID: 1639498913}
-  - {fileID: 1555802741}
-  - {fileID: 454771492}
-  - {fileID: 531876072}
-  - {fileID: 57133874}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1660057539 &9223372036854775807
@@ -2423,4 +2379,9 @@ SceneRoots:
   - {fileID: 1000668233}
   - {fileID: 504815270}
   - {fileID: 1520095809}
-  - {fileID: 1796309020}
+  - {fileID: 1624102072}
+  - {fileID: 1639498913}
+  - {fileID: 1555802741}
+  - {fileID: 454771492}
+  - {fileID: 531876072}
+  - {fileID: 57133874}

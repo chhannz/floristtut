@@ -15,3 +15,4 @@ MonoBehaviour:
   flowerID: tulip01
   flowerName: Tulip
   flowerSprite: {fileID: 21300000, guid: 9cd2c2ec1c91b284d96a247408a244d1, type: 3}
+  singleFlowerSprite: {fileID: 21300000, guid: 3f3a0553ef49ad64d9b707bfd8e86f95, type: 3}

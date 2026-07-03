@@ -15,3 +15,4 @@ MonoBehaviour:
   flowerID: lavender01
   flowerName: lavender
   flowerSprite: {fileID: 21300000, guid: 21d478c1f0b556945b7d650f52976459, type: 3}
+  singleFlowerSprite: {fileID: 21300000, guid: 01adfd4eeae67764f9491c01ed4c5fe6, type: 3}

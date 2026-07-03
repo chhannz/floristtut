@@ -1,57 +1,38 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-[RequireComponent(typeof(SpriteRenderer))]
-[RequireComponent(typeof(BoxCollider2D))]
-
-public class FlowerItem : MonoBehaviour, IPointerClickHandler
+public class FlowerItem : ShopItem
 {
     [SerializeField] private FlowerData flowerData;
-    private SpriteRenderer spriteRenderer;
+    public FlowerData Data => flowerData;
 
-    [SerializeField] private float targetSize = 1f;
-
-    private BoxCollider2D boxCollider;
+    [SerializeField] private int stock = 5;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Awake()
+    protected override void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        boxCollider =  GetComponent<BoxCollider2D>();
+        base.Start();
     }
 
-    void Start()
-    {
-        if (flowerData != null)
-        {
-            spriteRenderer.sprite = flowerData.FlowerSprite;
-            gameObject.name = flowerData.FlowerName;
-            AdjustScale();
-            boxCollider.size = spriteRenderer.sprite.bounds.size;
-        }
-        else
-        {
-            Debug.Log("No Flower Data");
-        }
-    }
-
-    void AdjustScale()
-    {
-        Vector2 spriteSize = spriteRenderer.sprite.bounds.size;
-        float largestSide = Mathf.Max(spriteSize.x, spriteSize.y);
-        float scaleFactor = targetSize / largestSide;
-        transform.localScale = new Vector3(scaleFactor, scaleFactor, 1f);
-    }
+    protected override Sprite GetSprite() => flowerData?.FlowerSprite;
+    protected override string GetItemName() => flowerData?.FlowerName;
     
-    public void OnPointerClick(PointerEventData eventData)
+    public override void OnPointerClick(PointerEventData eventData)
     {
-        Debug.Log("Clicked");
-        if (BouquetManager.Instance != null)
+        if (stock <= 0)
         {
-            BouquetManager.Instance.AddFlower(this);
+            Debug.Log("No stock");
+            return;
         }
-        else
-        {
-            Debug.Log("No bouquet Manager");
-        }
+        
+        BouquetManager.Instance?.AddFlower(this);
+        
+    }
+
+    public void ReduceStock()
+    {
+    }
+
+    public void RestoreStock()
+    {
     }
 }

@@ -15,3 +15,4 @@ MonoBehaviour:
   flowerID: baby01
   flowerName: baby
   flowerSprite: {fileID: 21300000, guid: 99813aa57c554d8468a91b9ccc9d0304, type: 3}
+  singleFlowerSprite: {fileID: 21300000, guid: fe2429421871a4d42819357a6e3ba53e, type: 3}
