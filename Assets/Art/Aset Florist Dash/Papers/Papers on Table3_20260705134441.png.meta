@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 1b87d6824721eb546a5d97d180c7fb25
+guid: 2fd6f330eda775a4ea1688a3b3cbdfa3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4457835537561387818
-    second: Black_0
-  - first:
-      213: 5151226657483612591
-    second: Black_1
+      213: -1188955630274811480
+    second: Papers on Table3_20260705134441_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -49,11 +46,11 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
-  alignment: 9
-  spritePivot: {x: 0.3775868, y: 0.56405514}
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
@@ -78,7 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -104,7 +101,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
+    textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -116,45 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Black_0
+      name: Papers on Table3_20260705134441_0
       rect:
         serializedVersion: 2
-        x: 850
-        y: 604
-        width: 1908
-        height: 2028
+        x: 1304
+        y: 482
+        width: 1976
+        height: 1808
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a2385738dc96ddd30800000000000000
-      internalID: 4457835537561387818
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Black_1
-      rect:
-        serializedVersion: 2
-        x: 2694
-        y: 418
-        width: 30
-        height: 30
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fa165d44a55dc7740800000000000000
-      internalID: 5151226657483612591
+      spriteID: 8a9e4c3572bff7fe0800000000000000
+      internalID: -1188955630274811480
       vertices: []
       indices: 
       edges: []
@@ -163,8 +138,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
-    internalID: 1537655665
+    spriteID: 
+    internalID: 0
     vertices: []
     indices: 
     edges: []
@@ -173,8 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Black_0: 4457835537561387818
-      Black_1: 5151226657483612591
+      Papers on Table3_20260705134441_0: -1188955630274811480
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

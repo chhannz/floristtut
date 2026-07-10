@@ -5,7 +5,10 @@ public class BouquetManager : MonoBehaviour
 {
     public static BouquetManager Instance {get; private set; }
     [SerializeField] private List<Transform> flowerSnapPoints;
+    [SerializeField] private Transform paperSnapPoint;
     [SerializeField] private GameObject snapFlowerPrefab;
+    [SerializeField] private GameObject snapPaperPrefab;
+    private GameObject currentPaper; 
     private Dictionary<Transform, SnapFlowerInstance> occupiedSnaps = new();
     private int pointIndex = 0;
 
@@ -50,5 +53,22 @@ public class BouquetManager : MonoBehaviour
         {
             occupiedSnaps.Remove(point);
         }
+    }
+
+    public void SelectPaper(PaperItem paper)
+    {
+        if (currentPaper != null)
+        {
+            Destroy(currentPaper);
+        }
+        
+        currentPaper = Instantiate(snapPaperPrefab, paperSnapPoint.position, Quaternion.identity, paperSnapPoint);
+        SnapPaperInstance snapPaper = currentPaper.GetComponent<SnapPaperInstance>();
+        snapPaper.Initialize(paper.PData.SnapSprite);
+    }
+
+    public void RemoveCurrentPaper()
+    {
+        currentPaper = null;
     }
 }
