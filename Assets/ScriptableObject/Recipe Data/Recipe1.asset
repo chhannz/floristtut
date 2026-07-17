@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df81fcb1493082488c9f21d608cc07f, type: 3}
+  m_Name: Recipe1
+  m_EditorClassIdentifier: Assembly-CSharp::BouquetRecipeData
+  requiredPaper: {fileID: 11400000, guid: b87222b650c6e1b40954688d906de2b8, type: 2}
+  requiredFlowers:
+  - {fileID: 11400000, guid: ff624d9ae86a0b74ea3a44aa5b9944d2, type: 2}
+  - {fileID: 11400000, guid: ff624d9ae86a0b74ea3a44aa5b9944d2, type: 2}
+  - {fileID: 11400000, guid: ff624d9ae86a0b74ea3a44aa5b9944d2, type: 2}
+  finalBouquetSprite: {fileID: 5614637178320563061, guid: 51ac8f19602b4ca49be6bdcc434a8b87, type: 3}

@@ -4,6 +4,9 @@ using System.Collections.Generic;
 public class BouquetManager : MonoBehaviour
 {
     public static BouquetManager Instance {get; private set; }
+    [SerializeField] private GameObject craftingTable;
+    [SerializeField] private SpriteRenderer finalBouquetDisplay;
+    [SerializeField] private List<BouquetRecipeData> bouquetRecipes;
     [SerializeField] private List<Transform> flowerSnapPoints;
     [SerializeField] private Transform paperSnapPoint;
     [SerializeField] private GameObject snapFlowerPrefab;
@@ -11,6 +14,8 @@ public class BouquetManager : MonoBehaviour
     private GameObject currentPaper; 
     private Dictionary<Transform, SnapFlowerInstance> occupiedSnaps = new();
     private int pointIndex = 0;
+    
+    public PaperData CurrentSelectedPaper { get; private set; }
 
     void Awake()
     {
@@ -65,10 +70,68 @@ public class BouquetManager : MonoBehaviour
         currentPaper = Instantiate(snapPaperPrefab, paperSnapPoint.position, Quaternion.identity, paperSnapPoint);
         SnapPaperInstance snapPaper = currentPaper.GetComponent<SnapPaperInstance>();
         snapPaper.Initialize(paper.PData.SnapSprite);
+        CurrentSelectedPaper = paper.PData;
     }
 
     public void RemoveCurrentPaper()
     {
+        if(currentPaper != null) Destroy(currentPaper);
         currentPaper = null;
+        CurrentSelectedPaper = null;
+    }
+
+    public void ConvertToFinalAsset()
+    {
+        BouquetRecipeData matchedRecipe = FindMatchingRecipe();
+        if (matchedRecipe != null)
+        {
+            craftingTable.SetActive(false);
+            finalBouquetDisplay.sprite = matchedRecipe.FinalBouquetSprite;
+            SpriteScaleUtility.AdjustScale(finalBouquetDisplay.transform, matchedRecipe.FinalBouquetSprite, 6f);
+            finalBouquetDisplay.gameObject.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("No recipe found");
+        }
+    }
+
+    private BouquetRecipeData FindMatchingRecipe()
+    {
+        if (CurrentSelectedPaper == null) return null;
+        List<FlowerData> placedFlowers = new List<FlowerData>();
+        foreach (var snap in occupiedSnaps.Values)
+        {
+            placedFlowers.Add(snap.FData);
+        }
+
+        foreach (BouquetRecipeData recipe in bouquetRecipes)
+        {
+            if(recipe.RequiredPaper != CurrentSelectedPaper) continue;
+            if(recipe.RequiredFlowers.Count != placedFlowers.Count) continue;
+            
+            List<FlowerData> tempRequired = new List<FlowerData>(recipe.RequiredFlowers);
+            bool isMatch = true;
+
+            foreach (FlowerData placed in placedFlowers)
+            {
+                if(tempRequired.Contains(placed))
+                {
+                    tempRequired.Remove(placed);
+                }
+                else
+                {
+                    isMatch = false;
+                    break;
+                }
+            }
+
+            if (isMatch && tempRequired.Count == 0)
+            {
+                return recipe;
+            }
+        }
+        
+        return null;
     }
 }

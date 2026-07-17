@@ -3,6 +3,7 @@ using UnityEngine.EventSystems;
 
 public class SnapFlowerInstance : MonoBehaviour, IPointerClickHandler
 {
+    public FlowerData FData {get; private set; }
     [SerializeField] private float targetSize = 4f;
     private FlowerItem sourceFlower;
     private Transform snapPoint;
@@ -11,6 +12,8 @@ public class SnapFlowerInstance : MonoBehaviour, IPointerClickHandler
     {
         sourceFlower = flower;
         snapPoint = point;
+        this.FData = flower.Data;
+        
         var sr = GetComponent<SpriteRenderer>();
         sr.sprite = singleSprite;
         SpriteScaleUtility.AdjustScale(sr.transform, singleSprite, targetSize);
