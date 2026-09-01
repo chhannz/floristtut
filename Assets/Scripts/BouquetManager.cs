@@ -6,6 +6,7 @@ public class BouquetManager : MonoBehaviour
     public static BouquetManager Instance {get; private set; }
     [SerializeField] private GameObject craftingTable;
     [SerializeField] private SpriteRenderer finalBouquetDisplay;
+    [SerializeField] private GameObject dimBackground; //tambahkan ini
     [SerializeField] private List<BouquetRecipeData> bouquetRecipes;
     [SerializeField] private List<Transform> flowerSnapPoints;
     [SerializeField] private Transform paperSnapPoint;
@@ -14,6 +15,15 @@ public class BouquetManager : MonoBehaviour
     private GameObject currentPaper; 
     private Dictionary<Transform, SnapFlowerInstance> occupiedSnaps = new();
     private int pointIndex = 0;
+    
+    //tombol2
+    [SerializeField] private GameObject btnMake;
+    [SerializeField] private GameObject btnConfirm;
+    [SerializeField] private GameObject btnCancel;
+    [SerializeField] private GameObject btnGive;
+    [SerializeField] private GameObject btnThrow;
+
+    private BouquetRecipeData currentReadyRecipe;
     
     public PaperData CurrentSelectedPaper { get; private set; }
 
@@ -85,15 +95,86 @@ public class BouquetManager : MonoBehaviour
         BouquetRecipeData matchedRecipe = FindMatchingRecipe();
         if (matchedRecipe != null)
         {
+            currentReadyRecipe = matchedRecipe;
+            
             craftingTable.SetActive(false);
+            
+            if (dimBackground != null)
+            {
+                dimBackground.SetActive(true);
+            }
+            
             finalBouquetDisplay.sprite = matchedRecipe.FinalBouquetSprite;
             SpriteScaleUtility.AdjustScale(finalBouquetDisplay.transform, matchedRecipe.FinalBouquetSprite, 6f);
             finalBouquetDisplay.gameObject.SetActive(true);
+            
+            btnMake.SetActive(false);
+            btnConfirm.SetActive(true);
+            btnCancel.SetActive(true);
         }
         else
         {
             Debug.LogWarning("No recipe found");
         }
+    }
+
+    public void CancelBouquet()
+    {
+        currentReadyRecipe = null;
+        if (dimBackground != null)
+        {
+            dimBackground.SetActive(false);
+        }
+        finalBouquetDisplay.gameObject.SetActive(false);
+        craftingTable.SetActive(true);
+        btnConfirm.SetActive(false);
+        btnCancel.SetActive(false);
+        btnMake.SetActive(true);
+    }
+
+    public void ConfirmBouquet()
+    {
+        if (dimBackground != null)
+        {
+            dimBackground.SetActive(false);
+        }
+        
+        ClearCraftingTable();
+        SpriteScaleUtility.AdjustScale(finalBouquetDisplay.transform, finalBouquetDisplay.sprite, 2f);
+        finalBouquetDisplay.sortingOrder = 1;
+        
+        btnConfirm.SetActive(false);
+        btnCancel.SetActive(false);
+        btnGive.SetActive(true);
+        btnThrow.SetActive(true);
+    }
+
+    public void GiveBouquet()
+    {
+        Debug.Log("Buket diberikan ke customer");
+        ThrowBouquet();
+    }
+
+    public void ThrowBouquet()
+    {
+        currentReadyRecipe = null;
+        finalBouquetDisplay.gameObject.SetActive(false);
+        craftingTable.SetActive(true);
+        
+        btnGive.SetActive(false);
+        btnThrow.SetActive(false);
+        btnMake.SetActive(true);
+    }
+
+    private void ClearCraftingTable()
+    {
+        foreach (var snap in occupiedSnaps.Values)
+        {
+            if(snap != null) Destroy(snap.gameObject);
+        }
+
+        occupiedSnaps.Clear();
+        RemoveCurrentPaper();
     }
 
     private BouquetRecipeData FindMatchingRecipe()
